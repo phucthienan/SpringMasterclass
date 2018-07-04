@@ -1,3 +1,4 @@
+<%@ page import="java.util.List" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -5,7 +6,7 @@
 </head>
 <body>
 <%
-    String[] messages = (String[]) request.getAttribute("welcomeMessages");
+    List<String> messages = (List<String>) request.getAttribute("welcomeMessages");
     String welcomeMessage = "";
 
     for (String message : messages) {

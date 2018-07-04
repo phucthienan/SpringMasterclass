@@ -7,7 +7,7 @@
 
     <servlet>
         <servlet-name>WelcomeServlet</servlet-name>
-        <servlet-class>com.nguyenphucthienan.servlet.WelcomeServlet</servlet-class>
+        <servlet-class>com.nguyenphucthienan.servlet.demo.WelcomeServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
