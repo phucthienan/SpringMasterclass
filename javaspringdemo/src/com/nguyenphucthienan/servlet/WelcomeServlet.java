@@ -13,7 +13,7 @@ public class WelcomeServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // 1. Create the data (model) and then add it to the request object
-        String[] welcomeMessages = {"Hello", "Welcome to Java Spring"};
+        String[] welcomeMessages = {"Hello!", "Welcome to Java Spring"};
         request.setAttribute("welcomeMessages", welcomeMessages);
 
         // 2. Retrieve request dispatcher
