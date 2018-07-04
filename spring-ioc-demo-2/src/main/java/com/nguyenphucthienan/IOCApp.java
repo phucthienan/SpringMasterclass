@@ -1,12 +1,12 @@
 package com.nguyenphucthienan;
 
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.FileSystemXmlApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class IOCApp {
     public static void main(String[] args) {
         // Create the application context (container)
-        ApplicationContext context = new FileSystemXmlApplicationContext("beans.xml");
+        ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
 
         // Create the bean
         Organization organization = (Organization) context.getBean("organization");
@@ -15,6 +15,6 @@ public class IOCApp {
         organization.corporateSlogan();
 
         // Close the application context (container)
-        ((FileSystemXmlApplicationContext) context).close();
+        ((ClassPathXmlApplicationContext) context).close();
     }
 }
