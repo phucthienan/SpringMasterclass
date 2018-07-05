@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="cloudService" class="com.nguyenphucthienan.serviceimpl.CloudServiceImpl"></bean>
+    <bean id="ecommerceService" class="com.nguyenphucthienan.serviceimpl.EcommerceServiceImpl"></bean>
+
+    <bean id="organization" class="com.nguyenphucthienan.domain.Organization">
+        <constructor-arg name="companyName" value="Spring"></constructor-arg>
+        <constructor-arg name="yearOfIncorporation" value="2018"></constructor-arg>
+        <property name="postalCode" value="88000"></property>
+        <property name="employeeCount" value="9000"></property>
+        <property name="slogan" value="Work hard, have fun, make history"></property>
+        <property name="businessService" ref="cloudService"></property>
+    </bean>
+</beans>
