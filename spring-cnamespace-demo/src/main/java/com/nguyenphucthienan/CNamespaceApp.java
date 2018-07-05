@@ -12,9 +12,6 @@ public class CNamespaceApp {
         // Create the bean
         Organization organization = (Organization) context.getBean("organization");
 
-        // Invoke the company slogan via the bean
-        organization.corporateSlogan();
-
         // Print organization details
         System.out.println(organization);
 
