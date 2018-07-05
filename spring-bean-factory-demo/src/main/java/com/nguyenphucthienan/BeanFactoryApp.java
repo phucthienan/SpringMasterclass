@@ -9,7 +9,7 @@ public class BeanFactoryApp {
         ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
 
         // Create the bean
-        Organization organization = (Organization) context.getBean("organization");
+        Organization organization = (Organization) context.getBean("secondOrganization");
 
         // Print organization details
         System.out.println(organization);

@@ -3,8 +3,16 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="organization" class="com.nguyenphucthienan.Organization" factory-method="createInstance">
+    <bean id="firstOrganization" class="com.nguyenphucthienan.Organization" factory-method="createInstance">
         <constructor-arg name="companyName" value="Spring"/>
         <constructor-arg name="yearOfIncorporation" value="2018"/>
     </bean>
+
+    <bean id="secondOrganization" class="com.nguyenphucthienan.Organization"
+          factory-bean="organizationFactory" factory-method="getInstance">
+        <constructor-arg name="companyName" value="Spring"/>
+        <constructor-arg name="yearOfIncorporation" value="2018"/>
+    </bean>
+
+    <bean id="organizationFactory" class="com.nguyenphucthienan.OrganizationFactory"/>
 </beans>
