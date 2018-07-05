@@ -10,14 +10,16 @@ public class BeanScopeApp {
         ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
 
         // Create the bean
-        Organization organization = (Organization) context.getBean("organization");
-
-        // Invoke the company slogan via the bean
-        System.out.println(organization.corporateSlogan());;
+        Organization organization1 = (Organization) context.getBean("organization");
+        Organization organization2 = (Organization) context.getBean("organization");
+        organization2.setPostalCode("88888");
 
         // Print organization details
-        System.out.println(organization);
-        System.out.println(organization.corporateService());
+        System.out.println(organization1);
+        System.out.println(organization2);
+        if (organization1==organization2){
+            System.out.println("Singleton scope test: organization1 and organization2 point to the same instance");
+        }
 
         // Close the application context (container)
         ((ClassPathXmlApplicationContext) context).close();

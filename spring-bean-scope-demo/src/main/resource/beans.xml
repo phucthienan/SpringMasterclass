@@ -6,7 +6,7 @@
     <bean id="cloudService" class="com.nguyenphucthienan.serviceimpl.CloudServiceImpl"/>
     <bean id="ecommerceService" class="com.nguyenphucthienan.serviceimpl.EcommerceServiceImpl"/>
 
-    <bean id="organization" class="com.nguyenphucthienan.domain.Organization">
+    <bean id="organization" class="com.nguyenphucthienan.domain.Organization" scope="singleton">
         <constructor-arg name="companyName" value="Spring"/>
         <constructor-arg name="yearOfIncorporation" value="2018"/>
         <property name="postalCode" value="88000"/>
