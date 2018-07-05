@@ -14,4 +14,13 @@
         <property name="slogan" value="Work hard, have fun, make history"></property>
         <property name="businessService" ref="cloudService"></property>
     </bean>
+
+    <bean id="agencyService" class="com.nguyenphucthienan.serviceimpl.AgencyRecruitmentServiceImpl"></bean>
+    <bean id="referralService" class="com.nguyenphucthienan.serviceimpl.ReferralRecruitmentServiceImpl"></bean>
+
+    <bean id="hrDepartment" class="com.nguyenphucthienan.domain.HumanResourceDepartment">
+        <constructor-arg name="recruimentService" ref="agencyService"></constructor-arg>
+        <constructor-arg name="organization" ref="organization"></constructor-arg>
+        <property name="departmentName" value="Human Resource Department"></property>
+    </bean>
 </beans>

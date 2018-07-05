@@ -18,14 +18,6 @@ public class Organization {
         this.yearOfIncorporation = yearOfIncorporation;
     }
 
-    public String corporateSlogan() {
-        return slogan;
-    }
-
-    public String corporateService() {
-        return businessService.offerService(companyName);
-    }
-
     @Override
     public String toString() {
         return "Organization{" +
@@ -34,6 +26,10 @@ public class Organization {
                 ", postalCode='" + postalCode + '\'' +
                 ", employeeCount=" + employeeCount +
                 '}';
+    }
+
+    public String getCompanyName() {
+        return companyName;
     }
 
     public void setPostalCode(String postalCode) {
@@ -50,5 +46,13 @@ public class Organization {
 
     public void setBusinessService(BusinessService businessService) {
         this.businessService = businessService;
+    }
+
+    public String corporateSlogan() {
+        return slogan;
+    }
+
+    public String corporateService() {
+        return businessService.offerService(companyName);
     }
 }
