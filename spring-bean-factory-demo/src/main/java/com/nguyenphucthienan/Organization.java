@@ -17,6 +17,11 @@ public class Organization {
         System.out.println(slogan);
     }
 
+    public static Organization createInstance(String companyName, int yearOfIncorporation) {
+        System.out.println("Invoking static factory method");
+        return new Organization(companyName, yearOfIncorporation);
+    }
+
     @Override
     public String toString() {
         return "Organization{" +
