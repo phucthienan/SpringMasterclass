@@ -3,6 +3,8 @@ package com.nguyenphucthienan;
 public class Organization {
     private String companyName;
     private int yearOfIncorporation;
+    private String postalCode;
+    private int employeeCount;
 
     // public Organization() {
     // }
@@ -22,6 +24,16 @@ public class Organization {
         return "Organization{" +
                 "companyName='" + companyName + '\'' +
                 ", yearOfIncorporation=" + yearOfIncorporation +
+                ", postalCode='" + postalCode + '\'' +
+                ", employeeCount=" + employeeCount +
                 '}';
+    }
+
+    public void setPostalCode(String postalCode) {
+        this.postalCode = postalCode;
+    }
+
+    public void setEmployeeCount(int employeeCount) {
+        this.employeeCount = employeeCount;
     }
 }

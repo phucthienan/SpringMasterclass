@@ -3,13 +3,12 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="firstOrganization" class="com.nguyenphucthienan.Organization">
-        <constructor-arg index="1" value="2018"></constructor-arg>
-        <constructor-arg index="0" value="Spring"></constructor-arg>
-    </bean>
-
-    <bean id="secondOrganization" class="com.nguyenphucthienan.Organization">
+    <bean id="organization" class="com.nguyenphucthienan.Organization">
         <constructor-arg name="companyName" value="Spring"></constructor-arg>
         <constructor-arg name="yearOfIncorporation" value="2018"></constructor-arg>
+        <property name="postalCode" value="88000"/>
+        <property name="employeeCount">
+            <value>9000</value>
+        </property>
     </bean>
 </beans>

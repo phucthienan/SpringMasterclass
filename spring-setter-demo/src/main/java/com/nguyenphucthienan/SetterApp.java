@@ -9,7 +9,7 @@ public class SetterApp {
         ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
 
         // Create the bean
-        Organization organization = (Organization) context.getBean("secondOrganization");
+        Organization organization = (Organization) context.getBean("organization");
 
         // Invoke the company slogan via the bean
         organization.corporateSlogan();
