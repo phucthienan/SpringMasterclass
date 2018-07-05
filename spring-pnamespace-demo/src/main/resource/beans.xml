@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns:c="http://www.springframework.org/schema/c"
+       xmlns:p="http://www.springframework.org/schema/p"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <bean id="organization" class="com.nguyenphucthienan.domain.Organization"
-          c:companyName="Spring"
-          c:yearOfIncorporation="2018"
-          c:address-ref="address"/>
+          p:companyName="Spring"
+          p:yearOfIncorporation="2018"
+          p:address-ref="address"/>
 
     <bean id="address" class="com.nguyenphucthienan.domain.Address"
-          c:street="St. Peter"
-          c:city="London"
-          c:zipCode="88000"/>
+          p:street="St. Peter"
+          p:city="London"
+          p:zipCode="88000"/>
 
 </beans>
