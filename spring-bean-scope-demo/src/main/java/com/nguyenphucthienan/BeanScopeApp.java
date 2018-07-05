@@ -19,6 +19,8 @@ public class BeanScopeApp {
         System.out.println(organization2);
         if (organization1==organization2){
             System.out.println("Singleton scope test: organization1 and organization2 point to the same instance");
+        } else {
+            System.out.println("Both organization1 and organization2 are separate instances");
         }
 
         // Close the application context (container)
