@@ -13,4 +13,12 @@ public class EcommerceServiceImpl implements BusinessService {
                 "\nThe annual revenue exceeds " + random.nextInt(revenue) + " dollars";
         return service;
     }
+
+    public void postConstruct() {
+        System.out.println("ecommerceService: postConstruct called");
+    }
+
+    public void preDestroy() {
+        System.out.println("ecommerceService: preDestroy called");
+    }
 }
