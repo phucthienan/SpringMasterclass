@@ -10,12 +10,22 @@ public class Organization {
     private String slogan;
     private BusinessService businessService;
 
-    // public Organization() {
-    // }
+    public Organization() {
+        System.out.println("default constructor called");
+    }
 
     public Organization(String companyName, int yearOfIncorporation) {
         this.companyName = companyName;
         this.yearOfIncorporation = yearOfIncorporation;
+        System.out.println("constructor called");
+    }
+
+    public void initialize() {
+        System.out.println("organization: initialize called");
+    }
+
+    public void destroy() {
+        System.out.println("organization: destroy called");
     }
 
     public String corporateSlogan() {
@@ -38,17 +48,21 @@ public class Organization {
 
     public void setPostalCode(String postalCode) {
         this.postalCode = postalCode;
+        System.out.println("setPostalCode called");
     }
 
     public void setEmployeeCount(int employeeCount) {
         this.employeeCount = employeeCount;
+        System.out.println("setEmployeeCount called");
     }
 
     public void setSlogan(String slogan) {
         this.slogan = slogan;
+        System.out.println("setSlogan called");
     }
 
     public void setBusinessService(BusinessService businessService) {
         this.businessService = businessService;
+        System.out.println("setBusinessService called");
     }
 }
