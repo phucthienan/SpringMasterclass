@@ -1,5 +1,6 @@
 package com.nguyenphucthienan;
 
+import com.nguyenphucthienan.domain.Organization;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -12,10 +13,11 @@ public class DISetterApp {
         Organization organization = (Organization) context.getBean("organization");
 
         // Invoke the company slogan via the bean
-        organization.corporateSlogan();
+        System.out.println(organization.corporateSlogan());;
 
         // Print organization details
         System.out.println(organization);
+        System.out.println(organization.corporateService());
 
         // Close the application context (container)
         ((ClassPathXmlApplicationContext) context).close();

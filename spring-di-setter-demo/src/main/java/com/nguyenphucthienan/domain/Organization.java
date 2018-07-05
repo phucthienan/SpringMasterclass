@@ -1,10 +1,14 @@
-package com.nguyenphucthienan;
+package com.nguyenphucthienan.domain;
+
+import com.nguyenphucthienan.service.BusinessService;
 
 public class Organization {
     private String companyName;
     private int yearOfIncorporation;
     private String postalCode;
     private int employeeCount;
+    private String slogan;
+    private BusinessService businessService;
 
     // public Organization() {
     // }
@@ -14,9 +18,12 @@ public class Organization {
         this.yearOfIncorporation = yearOfIncorporation;
     }
 
-    public void corporateSlogan() {
-        String slogan = "My Slogan";
-        System.out.println(slogan);
+    public String corporateSlogan() {
+        return slogan;
+    }
+
+    public String corporateService() {
+        return businessService.offerService(companyName);
     }
 
     @Override
@@ -35,5 +42,13 @@ public class Organization {
 
     public void setEmployeeCount(int employeeCount) {
         this.employeeCount = employeeCount;
+    }
+
+    public void setSlogan(String slogan) {
+        this.slogan = slogan;
+    }
+
+    public void setBusinessService(BusinessService businessService) {
+        this.businessService = businessService;
     }
 }
