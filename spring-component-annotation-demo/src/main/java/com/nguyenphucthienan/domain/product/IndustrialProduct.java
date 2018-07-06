@@ -1,7 +1,10 @@
 package com.nguyenphucthienan.domain.product;
 
+import org.springframework.stereotype.Component;
+
 import java.util.Random;
 
+@Component
 public class IndustrialProduct extends GenericProduct {
     @Override
     public int calculatePrice() {

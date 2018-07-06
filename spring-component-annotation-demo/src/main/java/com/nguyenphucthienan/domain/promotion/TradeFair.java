@@ -3,7 +3,9 @@ package com.nguyenphucthienan.domain.promotion;
 import com.nguyenphucthienan.domain.product.ConsumerProduct;
 import com.nguyenphucthienan.domain.product.IndustrialProduct;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component("tradeFair")
 public class TradeFair {
     // @Autowired
     private IndustrialProduct industrialProduct;

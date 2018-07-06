@@ -9,6 +9,7 @@
        default-init-method="postConstruct" default-destroy-method="preDestroy">
 
     <context:annotation-config/>
+    <context:component-scan base-package="com.nguyenphucthienan.domain"/>
 
     <bean id="cloudService" class="com.nguyenphucthienan.serviceimpl.CloudServiceImpl"/>
     <bean id="ecommerceService" class="com.nguyenphucthienan.serviceimpl.EcommerceServiceImpl"/>
@@ -21,9 +22,5 @@
         <property name="slogan" value="Work hard, have fun, make history"/>
         <property name="businessService" ref="ecommerceService"/>
     </bean>
-
-    <bean id="industrialProduct" class="com.nguyenphucthienan.domain.product.IndustrialProduct"/>
-    <bean id="consumerProduct" class="com.nguyenphucthienan.domain.product.ConsumerProduct"/>
-    <bean id="tradeFair" class="com.nguyenphucthienan.domain.promotion.TradeFair"/>
 
 </beans>
