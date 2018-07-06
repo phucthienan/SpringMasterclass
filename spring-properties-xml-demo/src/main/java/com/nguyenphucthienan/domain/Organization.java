@@ -1,10 +1,14 @@
 package com.nguyenphucthienan.domain;
 
 import com.nguyenphucthienan.service.BusinessService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 
 public class Organization {
     private String companyName;
     private int yearOfIncorporation;
+
+    @Value("${org.postalCode}")
     private String postalCode;
     private int employeeCount;
     private String slogan;
@@ -43,6 +47,7 @@ public class Organization {
                 ", yearOfIncorporation=" + yearOfIncorporation +
                 ", postalCode='" + postalCode + '\'' +
                 ", employeeCount=" + employeeCount +
+                ", slogan='" + slogan + '\'' +
                 '}';
     }
 
@@ -56,7 +61,14 @@ public class Organization {
         System.out.println("organization: setEmployeeCount called");
     }
 
-    public void setSlogan(String slogan) {
+    // @Value("${org.slogan}")
+    // public void setSlogan(String slogan) {
+    //     this.slogan = slogan;
+    //     System.out.println("organization: setSlogan called");
+    // }
+
+    @Autowired
+    public void setSlogan(@Value("${org.slogan}") String slogan) {
         this.slogan = slogan;
         System.out.println("organization: setSlogan called");
     }

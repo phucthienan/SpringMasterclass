@@ -8,18 +8,19 @@
        http://www.springframework.org/schema/context/spring-context.xsd"
        default-init-method="postConstruct" default-destroy-method="preDestroy">
 
-    <context:annotation-config/>
+    <!--<context:annotation-config/>-->
     <context:component-scan base-package="com.nguyenphucthienan.domain"/>
+    <context:property-placeholder location="organization.properties"/>
 
     <bean id="cloudService" class="com.nguyenphucthienan.serviceimpl.CloudServiceImpl"/>
     <bean id="ecommerceService" class="com.nguyenphucthienan.serviceimpl.EcommerceServiceImpl"/>
 
     <bean id="organization" class="com.nguyenphucthienan.domain.Organization">
-        <constructor-arg name="companyName" value="Spring"/>
-        <constructor-arg name="yearOfIncorporation" value="2018"/>
-        <property name="postalCode" value="88000"/>
-        <property name="employeeCount" value="9000"/>
-        <property name="slogan" value="Work hard, have fun, make history"/>
+        <constructor-arg name="companyName" value="${org.companyName}"/>
+        <constructor-arg name="yearOfIncorporation" value="${org.yearOfIncorporation}"/>
+        <!--<property name="postalCode" value="88000"/>-->
+        <property name="employeeCount" value="${org.employeeCount}"/>
+        <!--<property name="slogan" value="Work hard, have fun, make history"/>-->
         <property name="businessService" ref="ecommerceService"/>
     </bean>
 

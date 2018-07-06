@@ -1,6 +1,6 @@
 package com.nguyenphucthienan;
 
-import com.nguyenphucthienan.domain.promotion.TradeFair;
+import com.nguyenphucthienan.domain.Organization;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -9,8 +9,8 @@ public class PropertiesWithXmlApp {
         // Create the application context (container)
         ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
 
-        TradeFair tradeFair = (TradeFair) context.getBean("tradeFair");
-        System.out.println(tradeFair.specialPromotionPricing());
+        Organization organization = (Organization) context.getBean("organization");
+        System.out.println(organization);
 
         // Close the application context (container)
         ((ClassPathXmlApplicationContext) context).close();
