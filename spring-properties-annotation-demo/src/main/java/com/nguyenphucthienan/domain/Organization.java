@@ -1,13 +1,33 @@
 package com.nguyenphucthienan.domain;
 
 import com.nguyenphucthienan.service.BusinessService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.env.Environment;
+import org.springframework.stereotype.Component;
 
+@Component("organization")
 public class Organization {
+    @Value("${companyName}")
     private String companyName;
+
+    @Value("${startUpYear}")
     private int yearOfIncorporation;
+
+    @Value("${postalCode}")
     private String postalCode;
+
+    @Value("${employeeCount:9000}")
     private int employeeCount;
+
+    @Value("${corporateSlogan}")
     private String slogan;
+
+    private String missionStatement;
+
+    @Autowired
+    private Environment environment;
+
     private BusinessService businessService;
 
     public Organization() {
@@ -29,7 +49,8 @@ public class Organization {
     }
 
     public String corporateSlogan() {
-        return slogan;
+        missionStatement = environment.getProperty("statement");
+        return missionStatement + " and also " + slogan;
     }
 
     public String corporateService() {
